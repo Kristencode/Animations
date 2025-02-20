@@ -1,0 +1,231 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.jsdelivr.net/npm/taos@1.0.3"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        taos.init();
+    });
+</script>
+
+  <link href="/dist/style.css" rel="stylesheet">
+</head>
+<body>
+  <nav class="flex justify-between p-10 items-center">
+    <div class="flex items-center gap-4">
+        <img class="w-20" src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcSZOJMcgGtnAuVizyIa_V3N937aiLkNrnboo-ojr2IjGEpjTz2G" alt="logo">
+        <h1 class="text-2xl font-normal">FUND</h1> 
+        <ul>
+            <li>|</li>
+        </ul>
+        <hr>
+        <ul class="flex items-center gap-6">
+            <li class="cursor-pointer font-medium hover:text-gray-400 transition duration-300">Home</li>
+            <li class="cursor-pointer font-medium hover:text-gray-400 transition duration-300">Donation</li>
+            <li class="cursor-pointer font-medium hover:text-gray-400 transition duration-300">How it Works</li>
+            <li class="cursor-pointer font-medium hover:text-gray-400 transition duration-300">About Us</li>
+            <li class="cursor-pointer font-medium hover:text-gray-400 transition duration-300"></li>
+        </ul>
+
+    </div>
+    <div>
+        <button class="bg-green-200 p-4 rounded-full font-medium w-64 h-32  text-white flex items-center justify-center transition-transform duration-700 ease-in-out"
+        data-taos="slide-left">Download App</button>
+    </div>
+  </nav>
+  <main>
+    <img class="w-full p-10" src="images/bg.jpeg" alt="discription images ">
+    <div class="text-left p-10">
+        <h1 class="font-bold text-3xl">Fund, Fast as <i>Flash</i></h1>
+        <p class="text-gray-500">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Numquam ut ducimus quis ab quasi officiis libero animi, repudiandae exercitationem nam.</p>
+    </div>
+    <div class=" flex justify-between p-10 gap-8 text-left md:flex-col sm:flex-col lg:flex-row">
+        <div class="bg-gray-100 delay-[300ms] duration-[600ms] taos:translate-x-[-200px] taos:opacity-0  p-8 rounded-xl border border-gray-300" data-taos-offset="400">
+            <svg class="animate-bounce bg-green-200 rounded-full" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="green"><path d="M160-120q-33 0-56.5-23.5T80-200v-440q0-33 23.5-56.5T160-720h160v-80q0-33 23.5-56.5T400-880h160q33 0 56.5 23.5T640-800v80h160q33 0 56.5 23.5T880-640v440q0 33-23.5 56.5T800-120H160Zm240-600h160v-80H400v80Zm400 360H600v80H360v-80H160v160h640v-160Zm-360 0h80v-80h-80v80Zm-280-80h200v-80h240v80h200v-200H160v200Zm320 40Z"/></svg>
+              <h1 class="font-bold text-1xl text-left mt-2">Ignite Impact</h1>
+              <p class="text-gray-500 mt-2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro in libero laborum aliquam obcaecati magnam facilis, enim sapiente modi odio? Recusandae labore soluta, placeat similique nam facilis id dolore temporibus.</p>
+        </div>
+        <div class="bg-gray-100 p-8 animate__animated animate__fadeIn rounded-xl  border border-gray-300">
+            <svg class="animate-bounce  bg-green-200 rounded-full" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="green"><path d="m480-336 128-184H494l80-280H360v320h120v144ZM400-80v-320H280v-480h400l-80 280h160L400-80Zm80-400H360h120Z"/></svg>
+            <h1 class="font-bold text-1xl text-left mt-2">Spread the Word</h1>
+              <p class="text-gray-500 mt-2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro in libero laborum aliquam obcaecati magnam facilis, enim sapiente modi odio? Recusandae labore soluta, placeat similique nam facilis id dolore temporibus.</p>
+
+        </div>
+        <div class="bg-gray-100  animate-zoom-in p-8 rounded-xl  border border-gray-300">
+          <svg class="animate-bounce bg-green-200 rounded-full" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="green"><path d="M480-80q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-7-.5-14.5T799-507q-5 29-27 48t-52 19h-80q-33 0-56.5-23.5T560-520v-40H400v-80q0-33 23.5-56.5T480-720h40q0-23 12.5-40.5T563-789q-20-5-40.5-8t-42.5-3q-134 0-227 93t-93 227h200q66 0 113 47t47 113v40H400v110q20 5 39.5 7.5T480-160Z"/></svg>
+          <h1 class="font-bold text-1xl text-left mt-2">Connect Globally</h1>
+              <p class="text-gray-500 mt-2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro in libero laborum aliquam obcaecati magnam facilis, enim sapiente modi odio? Recusandae labore soluta, placeat similique nam facilis id dolore temporibus.</p>
+        </div>
+    </div>
+  </main>
+
+    <section class="animate__animated animate__fadeIn transition-all">
+      <div class="text-left p-10">
+          <h1 class="font-bold text-3xl">Urgent Fundraising</h1>
+          <p class="text-gray-500">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Numquam ut ducimus quis ab quasi officiis libero animi, repudiandae exercitationem nam.</p>
+      </div>
+      <div class="flex flex-wrap justify-center gap-8 p-4 animate-slide-up duration-200">
+          <div class="w-[400px] bg-white p-4 rounded-xl shadow-lg">
+              <img class="w-full h-[250px] rounded-xl object-cover" src="images/earth.jpeg" alt="earth">
+              <div class="flex items-center gap-3 mt-2">
+                  <p class="text-gray-500 text-xl">We care</p> 
+                  <img class="w-4 h-4" src="images/verified.png" alt="verified">
+              </div>
+              <h1 class="text-lg font-bold mt-2">GreenFund: Sustain Earth Now</h1>
+              <div class="relative mt-2">
+                  <div class="bg-green-950 h-2 rounded-full w-full"></div>
+                  <div class="bg-green-200 h-2 rounded-full absolute top-0 w-[75%]"></div>
+              </div>
+              <div class="flex justify-between items-center mt-2">
+                  <p class="text-gray-900 font-semibold">$50,240,210</p>
+                  <p class="text-gray-500">7 days left</p>
+              </div>
+          </div>
+  
+          <div  class="w-[400px] bg-white p-4 rounded-xl shadow-lg animate-slide-up delay-300">
+              <img class="w-full h-[250px] rounded-xl object-cover" src="images/causes.jpeg" alt="earth">
+              <div class="flex items-center gap-3 mt-2">
+                  <p class="text-gray-500 text-xl">Unicef</p> 
+                  <img class="w-4 h-4" src="images/verified.png" alt="verified">
+              </div>
+              <h1 class="text-lg font-bold mt-2">SeniorHealth: Support Campaign</h1>
+              <div class="relative mt-2">
+                  <div class="bg-green-950 h-2 rounded-full w-full"></div>
+                  <div class="bg-green-200 h-2 rounded-full absolute top-0 w-[90%]"></div>
+              </div>
+              <div class="flex justify-between items-center mt-2">
+                  <p class="text-gray-900 font-semibold">$50,240,210</p>
+                  <p class="text-gray-500">19 days left</p>
+              </div>
+          </div>
+  
+          <div class="w-[400px] bg-white p-4 rounded-xl shadow-lg animate-slide-up delay-500">
+              <img class="w-full h-[250px] rounded-xl object-cover" src="images/volunteer.jpeg" alt="earth">
+              <div class="flex items-center gap-3 mt-2">
+                  <p class="text-gray-500 text-xl">Unity Foundation</p> 
+                  <img class="w-4 h-4" src="images/verified.png" alt="verified">
+              </div>
+              <h1 class="text-lg font-bold mt-2">DisasterCare: Urgent Support</h1>
+              <div class="relative mt-2">
+                  <div class="bg-green-950 h-2 rounded-full w-full"></div>
+                  <div class="bg-green-200 h-2 rounded-full absolute top-0 w-[50%]"></div>
+              </div>
+              <div class="flex justify-between items-center mt-2">
+                  <p class="text-gray-900 font-semibold">$50,240,210</p>
+                  <p class="text-gray-500">23 days left</p>
+              </div>
+          </div>
+      </div>
+  </section>
+  
+</section>
+
+  <section>
+  <div class=" flex justify-between justify-center text-center mt-20 p-10">
+    <div class="animate-fade-in">
+      <img class="h-[200px] w-[130px] animate-slide-left rounded-xl" src="images/bois.jpeg" alt="">
+      <img class="h-[170px] w-[130px] animate-slide-right rounded-xl relative top-10 left-28" src="images/boi.jpeg" alt="">
+    </div>
+    <div class="mt-32 animate-slide-up">
+      <p class="text-2xl font-medium">Be The Part of FundRaisers With over</p>
+      <h1 class="text-9xl mt-4 font-medium">217,924+</h1>
+
+      <p  class="text-2xl font-medium mt-4">People From Arround The World Joined</p>
+    <button class="bg-green-300 mt-10 p-3 rounded-xl font-medium">Join FundRaising Now</button>
+    </div>
+    <div>
+      <img class="h-[200px] animate-slide-left w-[130px] rounded-xl" src="images/boys.jpeg" alt="">
+      <img class="h-[170px] w-[130px] animate-slide-right rounded-xl relative top-10 right-28" src="images/boy.jpeg" alt="">
+    </div>
+  </div>
+  </section>
+  <section>
+    <h1 class="text-3xl font-bold p-10">Frequently Asked <br> Questions?</h1>
+    <div class="p-10">
+      <div class="border-b border-gray-500 flex justify-between items-center space-y-12">
+        <h1 class="text-xl text-gray-500">How can I make Donations?</h1> 
+        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="gray"><path d="M440-440H200v-80h240v-240h80v240h240v80H520v240h-80v-240Z"/></svg>
+      </div>
+      <div class="border-b border-gray-600 flex justify-between items-center space-y-12">
+        <h1 class="text-xl text-gray-500">How can I make Donations?</h1> 
+        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="gray"><path d="M440-440H200v-80h240v-240h80v240h240v80H520v240h-80v-240Z"/></svg>
+      </div>
+      <div class="border-b border-gray-600 flex justify-between items-center space-y-12">
+        <h1 class="text-xl text-gray-500">How can I make Donations?</h1> 
+        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="gray"><path d="M440-440H200v-80h240v-240h80v240h240v80H520v240h-80v-240Z"/></svg>
+      </div>
+      <div class="border-b border-gray-600 flex justify-between items-center space-y-12">
+        <h1 class="text-xl text-gray-500">How can I make Donations?</h1> 
+        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="gray"><path d="M440-440H200v-80h240v-240h80v240h240v80H520v240h-80v-240Z"/></svg>
+      </div>
+      <div class="border-b border-gray-600 flex justify-between items-center space-y-12">
+        <h1>How can I make Donations?</h1> 
+        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="gray"><path d="M440-440H200v-80h240v-240h80v240h240v80H520v240h-80v-240Z"/></svg>
+      </div>
+    </div>
+    
+  </section>
+ <div class="p-10">
+  <footer class="bg-black text-white  rounded-2xl p-6">
+    <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center md:items-start">
+      <div class="text-center md:text-left mb-6 md:mb-0 animate-slide-up">
+        <h1 class="text-2xl font-bold flex items-center gap-2">
+          <span class="text-green-400">✶</span> Fund
+        </h1>
+        <p class="text-gray-400 mt-1">Elevating Experience & Seize Control Of Your Smart Home!</p>
+      </div>
+      <div class="grid grid-cols-3 gap-8 text-center md:text-left animate-slide-up" >
+        <div>
+          <h2 class="text-lg font-semibold">Donate</h2>
+          <ul class="text-gray-400 mt-2 space-y-1">
+            <li>Education</li>
+            <li>Social</li>
+            <li>Medicine</li>
+            <li>Disaster</li>
+          </ul>
+        </div>
+        <div>
+          <h2 class="text-lg font-semibold">Help</h2>
+          <ul class="text-gray-400 mt-2 space-y-1">
+            <li>FAQ</li>
+            <li>Privacy Policy</li>
+            <li>Accessibility</li>
+            <li>Contact Us</li>
+          </ul>
+        </div>
+        <div>
+          <h2 class="text-lg font-semibold">Company</h2>
+          <ul class="text-gray-400 mt-2 space-y-1">
+            <li>About Us</li>
+            <li>Careers</li>
+            <li>Services</li>
+            <li>Pricing</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="border-t border-gray-700 mt-6 pt-6 flex flex-col md:flex-row justify-between items-center animate-slide-up">
+      <p class="text-gray-500">© FundInc. 2023 All Rights Reserved.</p>
+      <div class="flex gap-4 mt-4 md:mt-0">
+        <button class="border border-gray-600 px-4 py-2 rounded-full flex items-center gap-2">
+          Instagram
+        </button>
+        <button class="border border-gray-600 px-4 py-2 rounded-full flex items-center gap-2">
+          Facebook
+        </button>
+        <button class="border border-gray-600 px-4 py-2 rounded-full flex items-center gap-2">
+           Twitter
+        </button>
+        <button class="border border-gray-600 px-4 py-2 rounded-full flex items-center gap-2">
+           Linkedin
+        </button>
+      </div>
+    </div>
+  </footer>
+  
+
+
+</body>
+</html>
